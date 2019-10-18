@@ -41,13 +41,13 @@
     // Deleting items from list
     
       // Clicking item's delete button:
-      $('.shopping-list').on('click', '.shopping-item-delete', function(){
+      $('.shopping-item-controls').click(function(){
         // removes clicked item from the list
-        $(this).parent().fadeOut(300, function(){
+        $(this).parent().fadeOut(function(){
           $(this).remove();
         });
       });
-    
+     
     // Checking item off list
     
       // Clicking item's check button:
