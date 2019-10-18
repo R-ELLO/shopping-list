@@ -7,24 +7,24 @@
 12. Hint: you may find it helpful to read up on and use the following jQuery methods: .submit(), preventDefault(), toggleClass(), and closest().
 */
 
-$('container').ready(function(){
+$('.container').ready(function(){
 
     // Adding items to the list
     
       // Define callback function
       const addItem = function() {
         // Declare variable to capture input text value
-        const text = $('shopping-list-entry').val();
+        const text = $('#shopping-list-entry').val();
         // If the input text field isn't empty, add it to the list as a new item
         if (text) {
-          $('shopping-list-entry').prepend('<li class="shopping-item"><a class="shopping-item-delete">delete</a>' + text + '<a class="shopping-item-toggle">check</a></li>');
+          $('#shopping-list-entry').prepend('<li class="shopping-item"><a class="shopping-item-delete">delete</a>' + text + '<a class="shopping-item-toggle">check</a></li>');
         }
         // Clear input text field
-        $('submit').val("");
+        $('.submit').val("");
       };
     
       // Add new item to list by clicking "Add" button
-      $('submit').on('click', function(event){
+      $('.submit').on('click', function(event){
         // (prevents form submit button unwanted default action)
         event.preventDefault();
         // run callback function
@@ -32,7 +32,7 @@ $('container').ready(function(){
       });
     
       // Add new item to the list by hitting "Enter"
-      $('submit').keypress(function(event){
+      $('.submit').keypress(function(event){
         if (event.which === 13) {
           // run callback function
           addItem();
