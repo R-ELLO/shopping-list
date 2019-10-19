@@ -10,7 +10,7 @@
       const addItem = function() {
         // Declare variable to capture input text value
         const text = $('#shopping-list-entry').val();
-        console.log('text', text);
+        //console.log('text', text);
         // If the input text field isn't empty, add it to the list as a new item
         if (text) {
           $('.shopping-list').prepend(`
@@ -43,7 +43,7 @@
       // Clicking item's delete button:
       $('.shopping-item-controls').click(function(){
         // removes clicked item from the list
-        $(this).parent().fadeOut(function(){
+        $(this).closest().fadeOut(function(){
           $(this).remove();
         });
       });
