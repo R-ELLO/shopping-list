@@ -49,15 +49,15 @@
     
       // Clicking item's check button:
       $('.shopping-list').on('click', '.shopping-item-toggle', function(event){
-        // strikes out checked item
-        $(this).closest('li.shopping-item').toggleClass('.shopping-item__checked');
+        // strikes out checked item and undo when checked agian
+        $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
         
     
         // moves element to either the bottom or top of the list
-        const listItem = $(this).closest();
-        if (listItem.hasClass('.shopping-item')) {
-          $('.shopping-list').append(listItem);
-        } else {
+        const listItem = $(this).closest('li');
+        if (listItem.hasClass('.shopping-item__checked')) {
           $('.shopping-list').prepend(listItem);
+        } else {
+          $('.shopping-list').append(listItem);
         }
       });
