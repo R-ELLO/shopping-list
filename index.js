@@ -50,8 +50,7 @@
       // Clicking item's check button:
       $('.shopping-list').on('click', '.shopping-item-toggle', function(event){
         // strikes out checked item
-        $(this).closest('li').css('text-decoration', 'line-through').toggleClass('.shopping-item_checked');
-        $(this).
+        $(this).closest('li').css('text-decoration', 'line-through');
         
     
         // moves element to either the bottom or top of the list
