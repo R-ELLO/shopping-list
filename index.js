@@ -1,10 +1,9 @@
 /* 
 2. check and uncheck items on the list by clicking the "Check" button
-3. permanently remove items from the list
 12. Hint: you may find it helpful to read up on and use the following jQuery methods: .submit(), preventDefault(), toggleClass(), and closest().
 */
 
-    // Adding items to the list
+// Adding items to the list
     
     // Define callback function
       const addItem = function() {
@@ -41,28 +40,25 @@
     // Deleting items from list
     
       // Clicking item's delete button:
-      $('.shopping-item-controls').click(function(){
+      $('.shopping-list').on('click' , '.shopping-item-delete', function(event){
         // removes clicked item from the list
-        $(this).closest().fadeOut(function(){
-          $(this).remove();
-        });
+        $(this).closest('li').remove();
       });
      
     // Checking item off list
     
       // Clicking item's check button:
       $('.shopping-list').on('click', '.shopping-item-toggle', function(event){
-        // grays everything out
-        $(this).parent().toggleClass('.shopping-item__checked');
-        $(this).siblings().toggleClass('.shopping-item-delete');
-        $(this).toggleClass('.shopping-item__checked');
+        // strikes out checked item
+        $(this).closest('li').css('text-decoration', 'line-through').toggleClass('.shopping-item_checked');
+        $(this).
+        
     
         // moves element to either the bottom or top of the list
-        var $listItem = $(this).parent();
-        if ($listItem.hasClass('.shopping-item__checked')) {
-          $('.shopping-list').append($listItem);
+        const listItem = $(this).closest();
+        if (listItem.hasClass('.shopping-item')) {
+          $('.shopping-list').append(listItem);
         } else {
-          $('.shopping-list').prepend($listItem);
+          $('.shopping-list').prepend(listItem);
         }
       });
-   // });
