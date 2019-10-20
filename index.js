@@ -1,8 +1,3 @@
-/* 
-2. check and uncheck items on the list by clicking the "Check" button
-12. Hint: you may find it helpful to read up on and use the following jQuery methods: .submit(), preventDefault(), toggleClass(), and closest().
-*/
-
 // Adding items to the list
     
     // Define callback function
